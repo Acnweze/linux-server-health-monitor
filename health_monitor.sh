@@ -68,3 +68,52 @@ else
 fi
 
 echo ""
+
+
+# Module 3: Network Monitoring
+
+echo "NETWORK MONITORING"
+echo "------------------"
+
+# Get IP Address
+IP_ADDRESS=$(hostname -I | awk '{print $1}')
+
+echo "Server IP Address: $IP_ADDRESS"
+
+
+# Internet Connectivity Check
+echo ""
+
+echo "Checking Internet Connectivity..."
+
+
+if curl -s --head https://google.com > /dev/null
+then
+    echo "Internet Status: CONNECTED"
+else
+    echo "Internet Status: FAILED"
+fi
+
+
+# DNS Resolution Check
+echo ""
+
+echo "Checking DNS Resolution..."
+
+if nslookup google.com > /dev/null 2>&1
+then
+    echo "DNS Status: WORKING"
+else
+    echo "DNS Status: FAILED"
+fi
+
+
+# Open Ports Check
+echo ""
+
+echo "Listening Ports"
+echo "----------------"
+
+ss -tuln | head -10
+
+echo ""
