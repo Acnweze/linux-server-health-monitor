@@ -114,6 +114,35 @@ echo ""
 echo "Listening Ports"
 echo "----------------"
 
-ss -tuln | head -10
-
+ss -tuln | head -
 echo ""
+
+# Module 4: Service Monitoring
+
+echo "SERVICE MONITORING"
+echo "------------------"
+
+
+check_service() {
+
+    SERVICE_NAME=$1
+
+    if service --status-all 2>/dev/null | grep -q "$SERVICE_NAME"
+    then
+
+        if service "$SERVICE_NAME" status >/dev/null 2>&1
+        then
+            echo "$SERVICE_NAME: RUNNING"
+        else
+            echo "$SERVICE_NAME: STOPPED"
+        fi
+
+    else
+        echo "$SERVICE_NAME: NOT INSTALLED"
+    fi
+
+}
+
+
+check_service ssh
+check_service nginx
