@@ -1,0 +1,57 @@
+====================================
+ Linux Server Health Report
+====================================
+
+Generated Date:
+Tue Jul 14 22:28:31 UTC 2026
+
+
+SERVER INFORMATION
+------------------
+Hostname: linux-health-monitor-vm
+Current User: azureuser
+Operating System: Ubuntu 24.04.4 LTS
+Kernel Version: 6.17.0-1020-azure
+System Uptime: up 1 hour, 9 minutes
+
+
+RESOURCE MONITORING
+-------------------
+
+CPU Usage: 21.9%
+CPU Status: HEALTHY
+
+Memory Usage: 1.99%
+Memory Status: HEALTHY
+
+Disk Usage: 7%
+Disk Status: HEALTHY
+
+
+NETWORK MONITORING
+------------------
+
+Server IP Address: 10.0.0.4
+
+Internet Status: CONNECTED
+
+DNS Status: WORKING
+
+
+LISTENING PORTS
+---------------
+
+tcp LISTEN 0.0.0.0:22
+tcp LISTEN 0.0.0.0:80
+
+
+SERVICE MONITORING
+------------------
+
+ssh: RUNNING
+nginx: RUNNING
+
+
+====================================
+ Health Check Completed Successfully
+====================================
